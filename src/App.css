@@ -1,0 +1,237 @@
+:root {
+  --main-background: #F2F2F2;
+  --text-color: #111517;
+  --comp-background: #ffffff;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Urbanist&display=swap');
+
+.App {
+  display: flex;
+  justify-content: center;
+  background: var(--main-background);
+  color: var(--text-color);
+
+}
+
+#SearchWrapper {
+  color: var(--text-color);
+  background-color: var(--comp-background);
+  position: absolute;
+  width: 480px;
+  height: 56px;
+  left: 80px;
+  top: 128px;
+}
+
+#SearchBox {
+  /* Rectangle */
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  font-family: 'Urbanist', sans-serif;
+  display: flex;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  color: var(--text-color);
+  background-color: var(--comp-background);
+
+}
+
+#searchInput {
+  color: var(--text-color);
+  background-color: var(--comp-background);
+
+  border: none;
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+
+}
+
+#selectDiv {
+  color: var(--text-color);
+  background-color: var(--comp-background);
+  position: absolute;
+  width: 200px;
+  height: 224px;
+  left: 1160px;
+  top: 128px;
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
+#Header {
+  color: var(--text-color);
+  background-color: var(--comp-background);
+  font-family: 'Urbanist', sans-serif;
+  display: flex;
+  position: absolute;
+  width: 1440px;
+  height: 80px;
+  left: 0px;
+  top: 0px;
+
+}
+
+#headerContainer {
+  /* Rectangle */
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  color: var(--text-color);
+  background-color: var(--comp-background);
+
+}
+
+#HeaderLeftParagraph {
+  /* Where in the world? */
+  position: absolute;
+  height: 33px;
+  left: 5.62%;
+  right: 78.12%;
+  top: calc(50% - 33px/2 - 0.5px);
+  font-family: 'Urbanist', sans-serif;
+  display: flex;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 24px;
+  line-height: 33px;
+  /* identical to box height */
+  color: #111517;
+}
+
+#HeaderSiteMode {
+  position: absolute;
+  left: 86.94%;
+  right: 5.56%;
+  top: 36.25%;
+  cursor: pointer;
+}
+
+#ModeBtn {
+  /* Dark Mode */
+  position: absolute;
+  height: 22px;
+  left: 25.93%;
+  right: 0%;
+  /* top: calc(50% - 22px/2); */
+  font-family: 'Urbanist', sans-serif;
+  display: flex;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 22px;
+  /* identical to box height */
+  color: #111517;
+
+}
+
+#MoonIcon {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  left: 0px;
+}
+
+#IndexContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  left: 0px;
+  background: var(--main-background);
+  color: var(--text-color);
+
+}
+
+.cardsCol {
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  row-gap: 10px;
+  column-gap: 20px;
+
+}
+
+.card {
+  color: var(--text-color);
+  background-color: var(--comp-background);
+
+}
+
+
+.cardsRow {
+  position: absolute;
+  top: 232px;
+  margin: 0 -5px;
+  padding-left: 120px;
+  padding-right: 75px;
+}
+
+
+.cardsRow:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+
+@media screen and (max-width: 600px) {
+  .cardsCol {
+    width: 100%;
+    display: block;
+    margin-bottom: 20px;
+  }
+}
+
+
+
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
