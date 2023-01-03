@@ -1,6 +1,5 @@
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
-
 import IndexPage from "./Pages/IndexPage";
 
 function App() {
