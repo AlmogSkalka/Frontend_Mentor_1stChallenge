@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from "react";
 import CountryCard from "../comps/CountryCard";
 import Header from "../comps/Header";
+import { useNavigate } from "react-router-dom";
 export default function IndexPage() {
   const [value, setValue] = useState("");
   const [tmpCountries, setTmpCountries] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [region, setRegion] = useState("");
+  const nav = useNavigate();
 
   useEffect(() => {
     if (localStorage.getItem("countries")) {
@@ -71,8 +73,9 @@ export default function IndexPage() {
   }, [filteredData]);
 
   const ClickOnCard = (country) => {
-    console.log("CLICK ON CARD", country);
+    nav("/Detail", { state: country });
   };
+
   return (
     <div id="IndexContainer">
       <Header />

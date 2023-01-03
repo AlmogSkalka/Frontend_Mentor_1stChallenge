@@ -9,7 +9,7 @@
 .App {
   display: flex;
   justify-content: center;
-
+  width: 100%
 }
 
 #SearchWrapper {
@@ -22,7 +22,14 @@
   top: 128px;
 }
 
-
+#BackWrapper {
+  color: var(--text-color);
+  position: absolute;
+  width: 480px;
+  height: 56px;
+  left: 80px;
+  top: 128px;
+}
 
 #SearchBox {
   /* Rectangle */
@@ -34,6 +41,17 @@
   font-family: 'Urbanist', sans-serif;
   display: flex;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+
+#BackBTN {
+  /* Rectangle */
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  top: 0%;
+  bottom: 0%;
+  font-family: 'Urbanist', sans-serif;
+  display: flex;
 }
 
 #searchInput {
@@ -156,6 +174,17 @@ input.hs-search-field__input {
 }
 
 #IndexContainer {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 1440px;
+  height: 1024px;
+  left: 0px;
+  background: var(--main-background);
+  color: var(--text-color);
+}
+
+#DetailContainer {
   display: flex;
   justify-content: center;
   position: relative;
