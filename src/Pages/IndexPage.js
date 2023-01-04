@@ -78,7 +78,6 @@ export default function IndexPage() {
 
   return (
     <div id="IndexContainer">
-      <Header />
       <div id="SearchWrapper">
         <div id="SearchBox">
           <input

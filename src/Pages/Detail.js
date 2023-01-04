@@ -1,16 +1,18 @@
 import React from "react";
 import Header from "../comps/Header";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
 export default function Detail() {
   const { state } = useLocation();
+  const nav = useNavigate();
   const country = { state }.state;
-  console.log("country: ", country);
-
+  const NavBack = () => {
+    nav("/");
+  };
   return (
     <div id="DetailContainer">
-      <Header />
       <div id="BackWrapper">
-        <div id="BackBTN">
+        <div id="BackBTN" onClick={NavBack}>
           <button>
             <img src={process.env.PUBLIC_URL + "Back.svg"} alt="backBTN" />
             Back
