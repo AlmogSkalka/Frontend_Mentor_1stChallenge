@@ -140,6 +140,83 @@ input.hs-search-field__input {
   top: 0px;
 }
 
+#CountryDetailsWrapper {
+  position: absolute;
+  width: 598px;
+  max-width: 598px;
+  max-height: 323px;
+  height: 323px;
+  left: 760px;
+  top: 319px;
+}
+
+#CountryNameP {
+  position: absolute;
+  height: 44px;
+  left: 0%;
+  right: 78.93%;
+  top: calc(50% - 44px/2 - 139.5px);
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 800;
+  font-size: 32px;
+  line-height: 44px;
+  /* identical to box height */
+
+
+  color: var(--text-color);
+}
+
+#borderingTagsCountries {
+  left: 31.71%;
+  right: 47.01%;
+  top: 0%;
+  bottom: 0%;
+  margin: 0px auto;
+  display: flex;
+}
+
+.borderParagraphs {
+  position: relative;
+  height: 19px;
+  left: 28.12%;
+  right: 28.12%;
+  top: calc(50% - 19px/2 + 0.5px);
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-size: 14px;
+  /* identical to box height */
+  margin: 5px;
+  color: var(--text-color);
+  box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+  border-radius: 2px;
+  width:96px;
+  text-align: center;
+}
+
+.CountryDetailsP {
+  position: absolute;
+  height: 24px;
+  left: 0%;
+  right: 71.84%;
+  top: calc(50% - 24px/2);
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-size: 16px;
+  line-height: 24px;
+  /* identical to box height, or 150% */
+  color: var(--text-color);
+  
+}
+
+#BorderCountries {
+  position: relative;
+  left: 0%;
+  right: 24.58%;
+  top: 91.33%;
+  bottom: 0%;
+}
+
 #headerContainer {
   /* Rectangle */
   position: absolute;
@@ -197,7 +274,7 @@ input.hs-search-field__input {
 
 #DetailContainer {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
   position: relative;
   width: 1440px;
   height: 1024px;
@@ -206,14 +283,7 @@ input.hs-search-field__input {
   color: var(--text-color);
 }
 
-.cardsCol {
-  margin-top: 70px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px 20px;
-  row-gap: 10px;
-  column-gap: 20px;
-}
+
 
 .card {
   border: hidden;
@@ -229,6 +299,43 @@ input.hs-search-field__input {
 
 .card-img>img {
   height: 208px
+}
+
+.BorderCountryTag {
+  position: absolute;
+  left: 31.71%;
+  right: 47.01%;
+  bottom: 0%;
+  position: absolute;
+  height: 19px;
+  top: calc(50% - 19px/2 + 0.5px);
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  color: var(--text-color);
+ 
+
+}
+
+.BorderCountriesIn {
+
+  position: absolute;
+  height: 19px;
+  left: 28.12%;
+  right: 28.12%;
+  top: calc(50% - 19px/2 + 0.5px);
+
+  font-family: 'Nunito Sans';
+  font-style: normal;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 19px;
+  /* identical to box height */
+  color: var(--text-color);
+ 
 }
 
 .card-body {
@@ -249,6 +356,15 @@ input.hs-search-field__input {
   content: "";
   display: table;
   clear: both;
+}
+
+.cardsCol {
+  margin-top: 70px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  row-gap: 10px;
+  column-gap: 20px;
 }
 
 @media screen and (max-width: 600px) {

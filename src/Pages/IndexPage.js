@@ -1,17 +1,25 @@
 import React, { useEffect, useState } from "react";
 import CountryCard from "../comps/CountryCard";
-import Header from "../comps/Header";
 import { useNavigate } from "react-router-dom";
+
 export default function IndexPage() {
   const [value, setValue] = useState("");
   const [tmpCountries, setTmpCountries] = useState([]);
   const [filteredData, setFilteredData] = useState([]);
   const [isSearching, setIsSearching] = useState(false);
   const [region, setRegion] = useState("");
+  const [BorderingCountries, setBorderingCountries] = useState([]);
+
   const nav = useNavigate();
 
+  //check if countries data exist in localstorage and if not then fetch
   useEffect(() => {
     if (localStorage.getItem("countries")) {
+      setBorderingCountries(
+        GenerateCountriesDictionary(
+          JSON.parse(localStorage.getItem("countries"))
+        )
+      );
       setTmpCountries(JSON.parse(localStorage.getItem("countries")));
     } else if (!localStorage.getItem("countries")) {
       fetch("https://restcountries.com/v3.1/all", {
@@ -27,6 +35,7 @@ export default function IndexPage() {
         .then(
           (result) => {
             localStorage.setItem("countries", JSON.stringify(result));
+            setBorderingCountries(GenerateCountriesDictionary(result));
           },
           (error) => {
             console.log("fetch error: ", error);
@@ -35,20 +44,14 @@ export default function IndexPage() {
     }
   }, []);
 
-  const handleOnChange = (event) => {
-    setValue(event.target.value);
+  const GenerateCountriesDictionary = (CountriesJson) => {
+    var dict = {};
+    for (let i = 0; i < CountriesJson.length; i++) {
+      dict[CountriesJson[i].cca3] = CountriesJson[i].name.common;
+    }
   };
 
-  const handleSelect = (event) => {
-    setRegion(event.target.value);
-  };
-
-  const filteredCountries = tmpCountries.filter(
-    (country) =>
-      country.name.common.toLowerCase().includes(value.toLowerCase()) &&
-      country.region.toLowerCase().includes(region.toLocaleLowerCase())
-  );
-
+  //filter countries by text input from user, use timout for smart search
   useEffect(() => {
     const timeoutId = setTimeout(
       () =>
@@ -65,12 +68,27 @@ export default function IndexPage() {
     return () => clearTimeout(timeoutId);
   }, [value]);
 
+  //filter data according to input value from user
   useEffect(() => {
     setIsSearching(true);
     if (value.length === 0) {
       setIsSearching(false);
     }
   }, [filteredData]);
+
+  const handleOnChange = (event) => {
+    setValue(event.target.value);
+  };
+
+  const handleSelect = (event) => {
+    setRegion(event.target.value);
+  };
+
+  const filteredCountries = tmpCountries.filter(
+    (country) =>
+      country.name.common.toLowerCase().includes(value.toLowerCase()) &&
+      country.region.toLowerCase().includes(region.toLocaleLowerCase())
+  );
 
   const ClickOnCard = (country) => {
     nav("/Detail", { state: country });

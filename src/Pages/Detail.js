@@ -5,6 +5,7 @@ export default function Detail() {
   const { state } = useLocation();
   const nav = useNavigate();
   const country = { state }.state;
+
   const NavBack = () => {
     nav("/");
   };
@@ -25,12 +26,31 @@ export default function Detail() {
         src={country.flags.svg}
         alt={country.name.official + " flag goes here"}
       />
-      {country.name.common}
-      Population: {country.population}
-      <br />
-      Region: {country.region}
-      <br />
-      Capital: {country.capital}{" "}
+      <div id="CountryDetailsWrapper">
+        <p id="CountryNameP"> {country.name.common}</p>
+        <p className="CountryDetailsP">
+          <b>Population:</b> {country.population}
+          <br />
+          <b>Region:</b> {country.region}
+          <br />
+          <b>Capital:</b> {country.capital}{" "}
+        </p>
+        <div id="BorderCountries">
+          <p className="CountryDetailsP">
+            <b>Border Countries:</b>{" "}
+          </p>
+          <div id="borderingTagsCountries">
+            {country.borders
+              ? country.borders.map((borderCountry, ind) => (
+                  <div key={ind} className="borderParagraphs">
+                    {" "}
+                    {borderCountry}
+                  </div>
+                ))
+              : "No border countries baby"}
+          </div>
+        </div>
+      </div>
     </div>
   );
 }
