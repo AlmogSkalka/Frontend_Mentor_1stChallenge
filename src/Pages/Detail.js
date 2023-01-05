@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../comps/Header";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function Detail() {
@@ -9,6 +8,8 @@ export default function Detail() {
   const NavBack = () => {
     nav("/");
   };
+
+  console.log("country: ", country);
   return (
     <div id="DetailContainer">
       <div id="BackWrapper">
@@ -20,10 +21,11 @@ export default function Detail() {
         </div>
       </div>
       <img
-        src={country.flags}
+        id="DetailImage"
+        src={country.flags.svg}
         alt={country.name.official + " flag goes here"}
       />
-      {country.name.official}
+      {country.name.common}
       Population: {country.population}
       <br />
       Region: {country.region}
